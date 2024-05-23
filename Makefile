@@ -114,7 +114,7 @@ export FC=gfortran
 # export FFLAGS= -march=corei7 -Bstatic -Waliasing -Wampersand -Wsurprising -Wintrinsics-std -Wno-tabs -Wintrinsic-shadow -Wline-truncation        -std=f2008 -O3 -ffast-math -funroll-all-loops -fomit-frame-pointer
 # export FFLAGS= -march=native          -Waliasing -Wampersand -Wsurprising -Wintrinsics-std -Wno-tabs -Wintrinsic-shadow -Wline-truncation -Wa,-q -std=f2008 -O3 -ffast-math -funroll-all-loops -fomit-frame-pointer -mtune=native
 # Had a problem with -O2 in the KRAKENC root finder for at/tests/Noise/Sduct. Switching to O1 (4//25/2023)
-export FFLAGS= -march=native -Bstatic -Waliasing -Wampersand              -Wintrinsics-std -Wno-tabs -Wintrinsic-shadow -Wline-truncation         -std=gnu  -O1 -ffast-math -funroll-all-loops -fomit-frame-pointer -mtune=native
+export FFLAGS= -Bstatic -Waliasing -Wampersand -Wintrinsics-std -Wno-tabs -Wintrinsic-shadow -Wline-truncation -std=gnu  -O1 -ffast-math -funroll-all-loops -fomit-frame-pointer
 
 # Compilation and run-time diagnostics on:
 # omni.env fails trap=invalid
@@ -160,8 +160,8 @@ export FFLAGS= -march=native -Bstatic -Waliasing -Wampersand              -Wintr
 export RM=rm
 export CC=gcc
 export CFLAGS=-g
-#export FFLAGS+= -I../misc -I../tslib -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
-export FFLAGS+= -I../misc -I../tslib
+export FFLAGS+= -I../misc -I../tslib -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+#export FFLAGS+= -I../misc -I../tslib
 
 # KRAKEL is commented out below because it requires the LAPACK library.
 # If you have the LAPACK library installed on your system, first edit the
